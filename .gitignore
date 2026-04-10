@@ -1,6 +1,8 @@
 node_modules/
 temporary screenshots/
-scraped-flowelectric/
+scraped-flowelectric/*.html
+scraped-flowelectric/*.txt
+scraped-flowelectric/*.png
 .superpowers/
 docs/
 server.log
