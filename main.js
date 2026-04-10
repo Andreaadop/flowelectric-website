@@ -2,9 +2,9 @@
    FLOW ELECTRIC INC — SHARED JS
    ============================================================ */
 
-import { gsap } from 'https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.esm.min.js';
-import { ScrollTrigger } from 'https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.esm.min.js';
-import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.3.21/dist/lenis.mjs';
+import { gsap } from 'https://esm.sh/gsap@3.14.2';
+import { ScrollTrigger } from 'https://esm.sh/gsap@3.14.2/ScrollTrigger';
+import Lenis from 'https://esm.sh/lenis@1.3.21';
 
 /* ─── INLINE CHAR SPLITTER (replaces Splitting.js) ───────── */
 function Splitting({ targets }) {
