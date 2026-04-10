@@ -25,6 +25,9 @@ const mime = {
   '.ttf':  'font/ttf',
   '.woff': 'font/woff',
   '.woff2':'font/woff2',
+  '.mp4':  'video/mp4',
+  '.webm': 'video/webm',
+  '.mov':  'video/quicktime',
 };
 
 const cleanRoutes = {
@@ -45,7 +48,10 @@ const cleanRoutes = {
 };
 
 const server = http.createServer((req, res) => {
-  const urlPath = req.url.split('?')[0];
+  const rawPath = req.url.split('?')[0];
+  const urlPath = decodeURIComponent(rawPath);
+  // Strip leading slash so path.join doesn't treat it as drive-root on Windows
+  const relPath = urlPath.replace(/^\/+/, '');
 
   if (cleanRoutes[urlPath]) {
     const filePath = path.join(__dirname, cleanRoutes[urlPath]);
@@ -57,7 +63,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  const filePath = path.join(__dirname, urlPath);
+  const filePath = path.join(__dirname, relPath);
   const ext = path.extname(filePath).toLowerCase();
   const contentType = mime[ext] || 'application/octet-stream';
 

@@ -1,0 +1,11 @@
+node_modules/
+temporary screenshots/
+scraped-flowelectric/
+.superpowers/
+docs/
+server.log
+nohup.out
+scrape.mjs
+screenshot.mjs
+screenshot-section.mjs
+screenshot-bolt-final.mjs

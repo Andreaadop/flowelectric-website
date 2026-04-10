@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://www.flowelectricregina.ca/">
   <meta property="og:title" content="Flow Electric Inc — Red Seal Electricians Regina SK">
   <meta property="og:description" content="Red Seal certified electricians serving Regina SK. Panels, EV charging, permanent lighting, aluminum wiring, and more.">
-  <meta property="og:image" content="https://www.flowelectricregina.ca/flow-electric-regina-photos/flow-electric-color-logo.webp">
+  <meta property="og:image" content="https://www.flowelectricregina.ca/flow-electric-regina-photos/gold-logo.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +22,11 @@
 </head>
 <body>
 
-  <!-- Custom cursor -->
-  <div class="cursor" aria-hidden="true"></div>
-
   <!-- ── NAV ── -->
   <nav class="o-nav" aria-label="Main navigation">
     <div class="o-nav__inner">
       <a href="/" class="o-nav__logo" aria-label="Flow Electric home">
-        <img src="/flow-electric-regina-photos/flow-electric-color-logo.webp" alt="Flow Electric Inc logo" width="120" height="36">
+        <img src="/flow-electric-regina-photos/gold-logo.png" alt="Flow Electric Inc logo" width="120" height="36">
       </a>
       <div class="o-nav__links">
         <a href="/about" class="o-nav__link">About</a>
@@ -72,6 +69,7 @@
 
     <!-- ── SECTION 1: HERO ── -->
     <section class="hero" aria-label="Hero">
+      <!-- Video fills full hero as background -->
       <div class="hero__video-panel">
         <video
           class="hero__video"
@@ -79,9 +77,11 @@
           muted
           playsinline
           preload="auto"
+          autoplay
           aria-label="Flow Electric logo animation"
         ></video>
       </div>
+      <!-- Text overlaid on video -->
       <div class="hero__text-panel">
         <div class="hero__eyebrow tx-label tx-gold">Red Seal Electricians · Regina SK</div>
         <h1 class="hero__headline tx-display" data-splitting>
@@ -91,59 +91,121 @@
           Residential and commercial electricians who lead with craftsmanship, backed by Red Seal certification and a commitment to doing it right.
         </p>
         <a href="/contact" class="btn btn--gold">Get a Free Quote →</a>
-      </div>
-      <div class="hero__trust-band" aria-label="Trust indicators">
-        <div class="hero__trust-item">
-          <div class="hero__trust-label">Red Seal Certified</div>
-          <div class="hero__trust-desc">Journeyman electricians on every project</div>
-        </div>
-        <div class="hero__trust-item">
-          <div class="hero__trust-label">Fully Insured</div>
-          <div class="hero__trust-desc">Liability and WCB coverage</div>
-        </div>
-        <div class="hero__trust-item">
-          <div class="hero__trust-label">Regina & Area</div>
-          <div class="hero__trust-desc">Serving Regina and surrounding communities</div>
+        <div class="hero__badges" aria-label="Trust indicators">
+          <div class="hero__badge">
+            <svg class="hero__badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            <span>Red Seal Certified</span>
+          </div>
+          <div class="hero__badge">
+            <svg class="hero__badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            <span>Fully Insured</span>
+          </div>
+          <div class="hero__badge">
+            <svg class="hero__badge-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 10 8 14 16 6"/></svg>
+            <span>Regina & Area</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ── MARQUEE STRIP ── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-inner">
+          <span class="marquee-item">Aluminum Wiring</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">EV Charging</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Lighting Upgrades</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Permanent Lighting</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Generators</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Hot Tub / Pool</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Smart Home</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Watts LED</span><span class="marquee-sep">✦</span>
+          <!-- repeat for seamless loop -->
+          <span class="marquee-item">Aluminum Wiring</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">EV Charging</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Lighting Upgrades</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Permanent Lighting</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Generators</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Hot Tub / Pool</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Smart Home</span><span class="marquee-sep">✦</span>
+          <span class="marquee-item">Watts LED</span><span class="marquee-sep">✦</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ── SECTION 2: WHY CHOOSE ── -->
     <section class="why-choose section" aria-labelledby="why-heading">
       <div class="container">
-        <div class="why-choose__header">
-          <div class="tx-label tx-gold reveal" style="margin-bottom:1.2rem;">Why Flow Electric</div>
+        <div class="why-choose__header reveal">
+          <div class="tx-label why-choose__eyebrow">Why Flow Electric</div>
           <h2 class="why-choose__heading tx-display" id="why-heading" data-splitting>
             Built on craft.<br>Backed by results.
           </h2>
         </div>
-      </div>
-      <div class="why-choose__cards reveal-stagger">
-        <div class="why-choose__card">
-          <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="24" cy="24" r="20"/><path d="M16 24l6 6 10-12"/>
-          </svg>
-          <h3 class="why-choose__card-title">Qualified Journeyman Electricians Supervise All Projects</h3>
-          <p class="why-choose__card-body">Every project benefits from the expertise of our certified journeyman electricians, ensuring high standards of safety and quality from start to finish.</p>
-        </div>
-        <div class="why-choose__card">
-          <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M24 4l4 8 9 1.3-6.5 6.3 1.5 9L24 24l-8 4.6 1.5-9L11 13.3l9-1.3z"/><path d="M12 36l-4 8M36 36l4 8"/>
-          </svg>
-          <h3 class="why-choose__card-title">Certified Materials & Quality Supplies</h3>
-          <p class="why-choose__card-body">We exclusively use certified, high-quality materials ensuring every installation is built to last and meets the highest safety standards.</p>
-        </div>
-        <div class="why-choose__card">
-          <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="4" y="14" width="18" height="24" rx="2"/><rect x="26" y="6" width="18" height="32" rx="2"/><path d="M4 28h18M26 20h18"/>
-          </svg>
-          <h3 class="why-choose__card-title">Experienced in Residential & Commercial Projects</h3>
-          <p class="why-choose__card-body">From small fixes to full builds, our team handles new constructions, renovations, and specific electrical tasks with efficiency and expertise.</p>
+        <div class="why-choose__cards reveal-stagger">
+          <div class="why-choose__card">
+            <div class="why-choose__card-img">
+              <img src="/scraped-flowelectric/images/8092-702b-41c4-a770-9ffef7a29d86_Flow_Electric_1622_8th_Ave_N__2814_of_21_29.jpg" alt="Journeyman electrician at work" loading="lazy">
+            </div>
+            <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="24" cy="24" r="20"/><path d="M16 24l6 6 10-12"/>
+            </svg>
+            <h3 class="why-choose__card-title">Qualified Journeyman Electricians Supervise All Projects</h3>
+            <p class="why-choose__card-body">Every project benefits from the expertise of our certified journeyman electricians, ensuring high standards of safety and quality from start to finish.</p>
+          </div>
+          <div class="why-choose__card">
+            <div class="why-choose__card-img">
+              <img src="/scraped-flowelectric/images/530a7d934527_6c17de43-7d23-4b97-aecc-bd7c1880af70_79_Sandison__2810_of_29_29.jpg" alt="Quality electrical materials" loading="lazy">
+            </div>
+            <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M24 4l4 8 9 1.3-6.5 6.3 1.5 9L24 24l-8 4.6 1.5-9L11 13.3l9-1.3z"/><path d="M12 36l-4 8M36 36l4 8"/>
+            </svg>
+            <h3 class="why-choose__card-title">Certified Materials & Quality Supplies</h3>
+            <p class="why-choose__card-body">We exclusively use certified, high-quality materials ensuring every installation is built to last and meets the highest safety standards.</p>
+          </div>
+          <div class="why-choose__card">
+            <div class="why-choose__card-img">
+              <img src="/scraped-flowelectric/images/530a7d934527_32ae6f87-3aeb-4afc-a7fa-07a5b013e0ba_79_Sandison__2817_of_29_29.jpg" alt="Residential and commercial electrical work" loading="lazy">
+            </div>
+            <svg class="why-choose__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="14" width="18" height="24" rx="2"/><rect x="26" y="6" width="18" height="32" rx="2"/><path d="M4 28h18M26 20h18"/>
+            </svg>
+            <h3 class="why-choose__card-title">Experienced in Residential & Commercial Projects</h3>
+            <p class="why-choose__card-body">From small fixes to full builds, our team handles new constructions, renovations, and specific electrical tasks with efficiency and expertise.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── SECTION 3: BOLT TRANSITION ── -->
+    <!-- ── SECTION 3: PHOTO STRIP ── -->
+    <div class="photo-strip-wrap">
+    <section class="photo-strip" aria-label="Our work">
+      <a href="/about" class="photo-strip__item">
+        <img src="/scraped-flowelectric/images/02f5-14e8-43f3-8108-c07523a9716d_Flow_Electric_1622_8th_Ave_N__2813_of_21_29.jpg" alt="Flow Electric team on a job site" loading="lazy">
+        <div class="photo-strip__overlay"><span>Our Team</span></div>
+      </a>
+      <a href="/electrical-panel-upgrade-regina" class="photo-strip__item">
+        <img src="/scraped-flowelectric/images/e89c-853b-4def-84dc-705633d5b643_Flow_Electric_1622_8th_Ave_N__2815_of_21_29.jpg" alt="Panel upgrade work" loading="lazy">
+        <div class="photo-strip__overlay"><span>Panel Work</span></div>
+      </a>
+      <a href="/permanent-lights-regina" class="photo-strip__item">
+        <img src="/scraped-flowelectric/images/content_v1_621d80761c0e530a7d934527_1773634231927-SALY6QW89DORV9CDJU7J_TX.jpg" alt="Permanent LED lighting on a home" loading="lazy">
+        <div class="photo-strip__overlay"><span>Perm. Lighting</span></div>
+      </a>
+      <a href="/hot-tub-pool-sauna" class="photo-strip__item">
+        <img src="/scraped-flowelectric/images/_621d80761c0e530a7d934527_35800594-30e6-4531-856a-92ab95508272_hottub_crane.JPEG" alt="Hot tub installation" loading="lazy">
+        <div class="photo-strip__overlay"><span>Hot Tubs</span></div>
+      </a>
+      <a href="/ev-charging-regina" class="photo-strip__item">
+        <img src="/scraped-flowelectric/images/-45196d87e4f9_Electric_Vehicle_EV_Charging_Socket_Plug_Port_original_2289537.jpg" alt="EV charging station" loading="lazy">
+        <div class="photo-strip__overlay"><span>EV Charging</span></div>
+      </a>
+    </section>
+    </div>
+
+    <!-- ── SECTION 4: BOLT TRANSITION ── -->
     <section class="bolt-scene" aria-hidden="true">
       <div class="bolt-scene__sticky">
         <div class="bolt-scene__layer bolt-scene__layer--a">
@@ -152,8 +214,12 @@
           </div>
         </div>
         <div class="bolt-scene__layer bolt-scene__layer--b"></div>
+        <div class="bolt-scene__bg-lines" aria-hidden="true"></div>
         <div class="bolt-scene__text bolt-scene__text--b">
           Let's get<br>to work.
+          <div class="bolt-scene__cta">
+            <a href="/contact" class="btn btn--gold">Contact Us →</a>
+          </div>
         </div>
         <svg class="bolt-scene__bolt" viewBox="0 0 320 530" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
           <polygon
@@ -168,149 +234,192 @@
       </div>
     </section>
 
-    <!-- ── SECTION 4: SERVICES GRID ── -->
+    <!-- ── SECTION 5: SERVICES GRID ── -->
     <section class="services-grid section" aria-labelledby="services-heading">
       <div class="container">
-        <div class="services-grid__header">
-          <div class="tx-label tx-gold reveal" style="margin-bottom:1.2rem;">What We Do</div>
+        <div class="services-grid__header reveal">
+          <div class="tx-label services-grid__eyebrow">What We Do</div>
           <h2 class="services-grid__heading tx-display" id="services-heading" data-splitting>Our Services</h2>
         </div>
         <div class="services-grid__grid reveal-stagger">
-          <a href="/aluminum-wiring-regina" class="service-card">
+          <a href="/aluminum-wiring-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/a33ae-e336-4d85-848f-52a4cbfa308a_Flow_Electric_-_335_Argyle_N__284_of_22_29.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 4v28M8 8l20 20M4 18h28M8 28L28 8"/></svg>
             <div class="service-card__name">Aluminum Wiring</div>
             <div class="service-card__desc">Remediation & insurance compliance for Regina's mid-century homes.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/electrical-panel-upgrade-regina" class="service-card">
+          <a href="/electrical-panel-upgrade-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/530a7d934527_6c17de43-7d23-4b97-aecc-bd7c1880af70_79_Sandison__2810_of_29_29.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M12 10h12M12 16h12M12 22h6"/></svg>
             <div class="service-card__name">Panel Upgrades</div>
             <div class="service-card__desc">100A to 200A service upgrades for modern electrical demands.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/lighting-upgrades-regina" class="service-card">
+          <a href="/lighting-upgrades-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/530a7d934527_32ae6f87-3aeb-4afc-a7fa-07a5b013e0ba_79_Sandison__2817_of_29_29.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 4a10 10 0 0 1 0 20M18 24v4M14 28h8"/><circle cx="18" cy="14" r="4"/></svg>
             <div class="service-card__name">Lighting Upgrades</div>
             <div class="service-card__desc">LED and energy-efficient lighting solutions for home and business.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/ev-charging-regina" class="service-card">
+          <a href="/ev-charging-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/-45196d87e4f9_Electric_Vehicle_EV_Charging_Socket_Plug_Port_original_2289537.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 28V16a8 8 0 0 1 16 0v12"/><path d="M14 20l4-8v8l4-4"/></svg>
             <div class="service-card__name">EV Charging</div>
             <div class="service-card__desc">Home and commercial EV charger installation throughout Regina.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/hot-tub-pool-sauna" class="service-card">
+          <a href="/hot-tub-pool-sauna" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/_621d80761c0e530a7d934527_35800594-30e6-4531-856a-92ab95508272_hottub_crane.JPEG')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 24c4-6 8-6 12 0s8 6 12 0M8 16c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg>
             <div class="service-card__name">Hot Tub / Pool / Sauna</div>
             <div class="service-card__desc">Safe electrical hookups for backyard amenities.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/permanent-lights-regina" class="service-card">
+          <a href="/permanent-lights-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/content_v1_621d80761c0e530a7d934527_1773634231927-SALY6QW89DORV9CDJU7J_TX.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h28M4 18h28M4 28h28"/><circle cx="12" cy="8" r="2" fill="currentColor"/><circle cx="24" cy="18" r="2" fill="currentColor"/><circle cx="16" cy="28" r="2" fill="currentColor"/></svg>
             <div class="service-card__name">Permanent Lighting</div>
             <div class="service-card__desc">Year-round architectural and landscape lighting systems.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/generator-installation-regina" class="service-card">
+          <a href="/generator-installation-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/t_v1_621d80761c0e530a7d934527_50bc3604-9315-407e-8daf-86b899947dfe_IMG_7302.jpeg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="28" height="18" rx="2"/><path d="M14 19l4-6v6l4-3"/></svg>
             <div class="service-card__name">Generators</div>
             <div class="service-card__desc">Standby generator installation for homes and businesses.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/smart-home-energy-regina" class="service-card">
+          <a href="/smart-home-energy-regina" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/530a7d934527_e208364c-f031-4618-a7db-de44646ba388_335_Maxwell__2827_of_29_29.jpg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 4L4 16v16h10v-8h8v8h10V16z"/></svg>
             <div class="service-card__name">Smart Home</div>
             <div class="service-card__desc">Automation, thermostats, lighting control, and security systems.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
-          <a href="/watts-led-permanent-lighting" class="service-card">
+          <a href="/watts-led-permanent-lighting" class="service-card service-card--img" style="--svc-bg:url('/scraped-flowelectric/images/ent_v1_621d80761c0e530a7d934527_1773629950177-7MXZA1O0WC9VSKE37TBC_IMG_0588.jpeg')">
+            <div class="service-card__bg"></div>
             <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 4v4M18 28v4M4 18H8M28 18h4M8.6 8.6l2.8 2.8M24.6 24.6l2.8 2.8M8.6 27.4l2.8-2.8M24.6 11.4l2.8-2.8"/><circle cx="18" cy="18" r="6"/></svg>
             <div class="service-card__name">Watts LED Lighting</div>
             <div class="service-card__desc">Premium permanent LED lighting for year-round curb appeal.</div>
-            <div class="service-card__link">Learn more <span aria-hidden="true">→</span></div>
+            <div class="service-card__link">Learn more →</div>
           </a>
         </div>
+        <div class="services-grid__cta reveal">
+          <a href="/services" class="btn btn--dark-outline">View All Services →</a>
+        </div>
       </div>
     </section>
 
-    <!-- ── SECTION 5: FEATURED SERVICE ── -->
+    <!-- ── SECTION 6: IMAGE BG FEATURE ── -->
+    <section class="img-feature" aria-labelledby="img-feature-heading">
+      <div class="img-feature__bg">
+        <img src="/scraped-flowelectric/images/02f5-14e8-43f3-8108-c07523a9716d_Flow_Electric_1622_8th_Ave_N__2813_of_21_29.jpg" alt="Flow Electric team" loading="lazy">
+      </div>
+      <div class="img-feature__overlay"></div>
+      <div class="container img-feature__content reveal">
+        <div class="tx-label img-feature__eyebrow">14+ Years of Experience</div>
+        <h2 class="img-feature__heading tx-display" id="img-feature-heading">Installing power where you need it.</h2>
+        <p class="img-feature__sub">Flow Electric is a company of families, building and growing together. A tight, premium electrical firm dedicated to solving real problems with quality workmanship.</p>
+        <a href="/about" class="btn btn--white">Meet the Team →</a>
+      </div>
+    </section>
+
+    <!-- ── SECTION 7: FEATURED SERVICE (WATTS LED) ── -->
     <section class="featured-service section" aria-labelledby="featured-heading">
+      <!-- Animated background -->
+      <div class="featured-service__glow-bg" aria-hidden="true"></div>
+      <svg class="featured-service__bolt-bg" viewBox="0 0 200 420" fill="currentColor" aria-hidden="true">
+        <polygon points="130,0 50,200 112,200 38,420 190,158 120,158 172,0"/>
+      </svg>
       <div class="container">
-        <div class="featured-service__inner">
-          <div class="reveal-left">
-            <div class="tx-label tx-gold featured-service__label">Featured Service</div>
+        <div class="featured-service__inner reveal">
+          <div>
+            <div class="tx-label featured-service__eyebrow">Featured Service</div>
             <h2 class="featured-service__heading tx-display" id="featured-heading">Watts LED Permanent Lighting</h2>
-            <ul class="featured-service__points">
-              <li class="featured-service__point">Year-round architectural lighting — no seasonal takedown</li>
-              <li class="featured-service__point">Fully customizable colours and scenes via app control</li>
-              <li class="featured-service__point">Professionally installed, weather-rated, and warrantied</li>
-            </ul>
-            <a href="/watts-led-permanent-lighting" class="btn btn--gold">Learn More →</a>
           </div>
-          <div class="reveal-right">
-            <img
-              class="featured-service__img"
-              src="/scraped-flowelectric/images/content_v1_621d80761c0e530a7d934527_1773634231927-SALY6QW89DORV9CDJU7J_TX.jpg"
-              alt="Watts LED permanent lighting installed on a Regina home"
-              loading="lazy"
-              width="800"
-              height="600"
-            >
+          <ul class="featured-service__points">
+            <li class="featured-service__point">Year-round architectural accent — no seasonal takedown</li>
+            <li class="featured-service__point">16+ million colours, app-controlled from anywhere</li>
+            <li class="featured-service__point">Professionally installed, IP68 rated, warrantied</li>
+          </ul>
+          <div class="featured-service__specs">
+            <div class="featured-service__spec">
+              <div class="featured-service__spec-value">16.7M</div>
+              <div class="featured-service__spec-label">Colour Options</div>
+            </div>
+            <div class="featured-service__spec">
+              <div class="featured-service__spec-value">IP68</div>
+              <div class="featured-service__spec-label">Weather Rating</div>
+            </div>
+            <div class="featured-service__spec">
+              <div class="featured-service__spec-value">5yr</div>
+              <div class="featured-service__spec-label">Parts Warranty</div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SECTION 6: ABOUT TEASER ── -->
-    <section class="about-teaser section" aria-labelledby="about-teaser-heading">
-      <div class="container">
-        <div class="about-teaser__inner">
-          <div class="reveal-right">
-            <img
-              class="about-teaser__img"
-              src="/scraped-flowelectric/images/02f5-14e8-43f3-8108-c07523a9716d_Flow_Electric_1622_8th_Ave_N__2813_of_21_29.jpg"
-              alt="Flow Electric team on a job site in Regina"
-              loading="lazy"
-              width="800"
-              height="600"
-            >
-          </div>
-          <div class="reveal-left">
-            <div class="tx-label" style="color:var(--dark);opacity:0.5;margin-bottom:1.2rem;">Who We Are</div>
-            <h3 class="about-teaser__heading tx-display" id="about-teaser-heading">Installing power where you need it.</h3>
-            <p class="about-teaser__body">Flow Electric is a company of families, building and growing together. We are a tight, premium electrical firm dedicated to solving real problems with quality workmanship and clean execution.</p>
-            <a href="/about" class="btn btn--dark" style="border:2px solid var(--dark);">Meet the Team →</a>
+          <div class="featured-service__btn-wrap">
+            <a href="/watts-led-permanent-lighting" class="btn btn--dark-outline">Learn More →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── SECTION 7: SERVICE AREA ── -->
+    <!-- ── SECTION 8: SERVICE AREA MARQUEE ── -->
+    <div class="area-marquee-wrap" aria-label="Service areas">
+      <div class="area-marquee-label">Serving</div>
+      <div class="marquee-track marquee-track--slow">
+        <div class="marquee-inner marquee-inner--dark">
+          <span class="marquee-item">Albert Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Normanview</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Argyle Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Glencairn</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Lakeview</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Whitmore Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Rosemont</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Uplands</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Weyburn</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Moose Jaw</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">White City</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Emerald Park</span><span class="marquee-sep">·</span>
+          <!-- repeat -->
+          <span class="marquee-item">Albert Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Normanview</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Argyle Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Glencairn</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Lakeview</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Whitmore Park</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Rosemont</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Uplands</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Weyburn</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Moose Jaw</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">White City</span><span class="marquee-sep">·</span>
+          <span class="marquee-item">Emerald Park</span><span class="marquee-sep">·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SECTION 9: SERVICE AREA MAP ── -->
     <section class="service-area section" aria-labelledby="area-heading">
-      <div class="container">
-        <h3 class="service-area__heading tx-display reveal" id="area-heading">Serving Regina &amp; Surrounding Areas</h3>
-        <div class="service-area__divider reveal"></div>
-        <ul class="service-area__list reveal-stagger" aria-label="Service areas">
-          <li class="service-area__item">Albert Park</li>
-          <li class="service-area__item">Normanview</li>
-          <li class="service-area__item">Argyle Park</li>
-          <li class="service-area__item">Glencairn</li>
-          <li class="service-area__item">Lakeview</li>
-          <li class="service-area__item">Whitmore Park</li>
-          <li class="service-area__item">Rosemont</li>
-          <li class="service-area__item">Uplands</li>
-          <li class="service-area__item">Weyburn</li>
-          <li class="service-area__item">Moose Jaw</li>
-        </ul>
+      <div class="service-area__map-wrap" aria-hidden="true">
+        <img class="service-area__map" src="/flow-electric-regina-photos/regina-map.svg" alt="" loading="lazy" width="2451" height="3467">
+      </div>
+      <div class="service-area__map-tint" aria-hidden="true"></div>
+      <div class="container service-area__inner">
+        <div class="service-area__content reveal">
+          <div class="tx-label service-area__eyebrow">Service Coverage</div>
+          <h2 class="tx-display service-area__heading" id="area-heading">Regina &amp;<br>Surrounding<br>Communities</h2>
+          <p class="service-area__sub">From Albert Park to Whitmore Park, and beyond to Moose Jaw, Weyburn, and White City — if you're in the Regina area, we're your electricians.</p>
+          <a href="/contact" class="btn btn--gold">Book a Service Call →</a>
+        </div>
       </div>
     </section>
 
-    <!-- ── SECTION 8: GOOGLE REVIEWS CTA ── -->
+    <!-- ── SECTION 10: GOOGLE REVIEWS ── -->
     <section class="reviews-cta section" aria-labelledby="reviews-heading">
       <div class="container">
         <div class="reviews-cta__stars reveal" aria-label="Five stars">★★★★★</div>
-        <h3 class="reviews-cta__heading tx-display reveal" id="reviews-heading">See What Regina Says About Us</h3>
+        <h2 class="reviews-cta__heading tx-display reveal" id="reviews-heading">See What Regina Says About Us</h2>
         <p class="reviews-cta__sub reveal">Trusted by hundreds of homeowners and businesses across Regina.</p>
         <div class="reveal">
           <a
@@ -323,14 +432,88 @@
       </div>
     </section>
 
-    <!-- ── SECTION 9: CONTACT CTA ── -->
+    <!-- ── SECTION 10: CONTACT CTA ── -->
     <section class="contact-cta section" aria-labelledby="cta-heading">
-      <div class="container">
-        <h3 class="contact-cta__heading tx-display reveal" id="cta-heading">Ready to get started?</h3>
-        <a href="tel:+13065550000" class="contact-cta__phone reveal">(306) 555-0000</a>
+      <div class="contact-cta__img-wrap">
+        <img src="/scraped-flowelectric/images/d934527_5ceb5179-383b-4b94-afc9-545c12e0506a_2622_Dorsey_Place__283_of_18_29.jpg" alt="Regina home electrical work" loading="lazy">
+      </div>
+      <div class="container contact-cta__inner">
+        <h2 class="contact-cta__heading tx-display reveal" id="cta-heading">Ready to get started?</h2>
+        <a href="tel:+13069101469" class="contact-cta__phone reveal">(306) 910-1469</a>
         <a href="mailto:info@flowelectricregina.ca" class="contact-cta__email reveal">info@flowelectricregina.ca</a>
         <div class="reveal">
           <a href="/contact" class="btn btn--gold">Book a Consultation →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 11: INSTAGRAM HIGHLIGHT ── -->
+    <section class="ig-section" aria-labelledby="ig-heading">
+      <div class="ig-section__bg" aria-hidden="true">
+        <div class="ig-orb ig-orb--1"></div>
+        <div class="ig-orb ig-orb--2"></div>
+        <div class="ig-orb ig-orb--3"></div>
+      </div>
+      <div class="container ig-section__inner">
+
+        <div class="ig-section__header reveal">
+          <div class="tx-label ig-section__eyebrow">Follow Along</div>
+          <h2 class="tx-display ig-section__heading" id="ig-heading">Real work.<br>Real results.</h2>
+          <p class="ig-section__sub">Behind-the-scenes from job sites across Regina.</p>
+          <a href="https://www.instagram.com/flowelectricregina/" class="ig-follow-btn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Follow @flowelectricregina
+          </a>
+        </div>
+
+        <div class="ig-reels">
+
+          <div class="ig-reel ig-reel--left">
+            <div class="ig-reel__glow" aria-hidden="true"></div>
+            <div class="ig-reel__phone">
+              <div class="ig-reel__notch" aria-hidden="true"></div>
+              <video class="ig-reel__video" muted loop playsinline autoplay preload="auto">
+                <source src="/instagram/Our pals over at @boysnextdoorwindowcleaning moved into a new space and were in need of a washer.mp4" type="video/mp4">
+              </video>
+              <div class="ig-reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+              <div class="ig-reel__overlay">
+                <div class="ig-reel__caption">Commercial Hookup</div>
+                <div class="ig-reel__tag">#FlowElectric #YQR</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ig-reel ig-reel--center">
+            <div class="ig-reel__featured-badge" aria-hidden="true">⚡</div>
+            <div class="ig-reel__glow" aria-hidden="true"></div>
+            <div class="ig-reel__phone">
+              <div class="ig-reel__notch" aria-hidden="true"></div>
+              <video class="ig-reel__video" muted loop playsinline autoplay preload="auto">
+                <source src="/instagram/Behind every working switch is good wiring. ⚡%23FlowElectric %23Electrician %23YQR.mp4" type="video/mp4">
+              </video>
+              <div class="ig-reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+              <div class="ig-reel__overlay">
+                <div class="ig-reel__caption">Clean Wiring</div>
+                <div class="ig-reel__tag">#Electrician #YQR</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ig-reel ig-reel--right">
+            <div class="ig-reel__glow" aria-hidden="true"></div>
+            <div class="ig-reel__phone">
+              <div class="ig-reel__notch" aria-hidden="true"></div>
+              <video class="ig-reel__video" muted loop playsinline autoplay preload="auto">
+                <source src="/instagram/Every upgrade starts with a closer look. ⚡️Before any commercial lighting upgrade, we inspect th.mp4" type="video/mp4">
+              </video>
+              <div class="ig-reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></div>
+              <div class="ig-reel__overlay">
+                <div class="ig-reel__caption">Lighting Upgrade</div>
+                <div class="ig-reel__tag">#Regina</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -343,7 +526,7 @@
       <div class="o-footer__inner">
         <div>
           <div class="o-footer__logo">
-            <img src="/flow-electric-regina-photos/flow-electric-color-logo.webp" alt="Flow Electric Inc" width="140" height="48">
+            <img src="/flow-electric-regina-photos/gold-logo.png" alt="Flow Electric Inc" width="140" height="48">
           </div>
           <p class="o-footer__tagline">Red Seal certified electricians serving Regina and surrounding areas.</p>
         </div>

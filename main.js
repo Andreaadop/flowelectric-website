@@ -2,10 +2,33 @@
    FLOW ELECTRIC INC — SHARED JS
    ============================================================ */
 
-import { gsap } from '/node_modules/gsap/dist/gsap.min.js';
-import { ScrollTrigger } from '/node_modules/gsap/dist/ScrollTrigger.min.js';
-import Lenis from '/node_modules/lenis/dist/lenis.min.js';
-import Splitting from '/node_modules/splitting/dist/splitting.min.js';
+import { gsap } from '/node_modules/gsap/index.js';
+import { ScrollTrigger } from '/node_modules/gsap/ScrollTrigger.js';
+import Lenis from '/node_modules/lenis/dist/lenis.mjs';
+
+/* ─── INLINE CHAR SPLITTER (replaces Splitting.js) ───────── */
+function Splitting({ targets }) {
+  document.querySelectorAll(targets).forEach(el => {
+    el.classList.add('splitting');
+    el.setAttribute('aria-label', el.textContent);
+    const processNode = (node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        const frag = document.createDocumentFragment();
+        [...node.textContent.trim()].forEach(c => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          if (c === ' ') { span.textContent = '\u00a0'; span.style.display = 'inline'; }
+          else span.textContent = c;
+          frag.appendChild(span);
+        });
+        node.replaceWith(frag);
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        [...node.childNodes].forEach(processNode);
+      }
+    };
+    [...el.childNodes].forEach(processNode);
+  });
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,19 +90,6 @@ document.querySelectorAll('.o-nav__link[href]').forEach(link => {
   if (href === currentPath) link.classList.add('is-active');
 });
 
-/* ─── CUSTOM CURSOR ───────────────────────────────────────── */
-const cursor = document.querySelector('.cursor');
-if (cursor && window.matchMedia('(pointer: fine)').matches) {
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button, [role="button"]').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
-  });
-}
-
 /* ─── SPLITTING.JS TEXT REVEALS ───────────────────────────── */
 Splitting({ targets: '[data-splitting]' });
 
@@ -87,7 +97,7 @@ document.querySelectorAll('[data-splitting]').forEach(el => {
   const chars = el.querySelectorAll('.char');
   if (!chars.length) return;
 
-  const isHero = !!el.closest('.hero');
+  const isHero = !!el.closest('.hero, .page-hero');
 
   if (isHero) {
     // Hero headline: animate immediately on page load
@@ -100,41 +110,55 @@ document.querySelectorAll('[data-splitting]').forEach(el => {
       delay: 0.2,
     });
   } else {
-    // Other headings: animate on scroll
-    gsap.to(chars, {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      stagger: 0.018,
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        once: true,
-      },
-    });
+    // Other headings: animate via IntersectionObserver
+    const animate = () => gsap.to(chars, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.018 });
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      animate();
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { animate(); io.disconnect(); }
+      }, { threshold: 0.1 });
+      io.observe(el);
+    }
   }
 });
 
-/* ─── SCROLL REVEALS ──────────────────────────────────────── */
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 88%',
-    once: true,
-    onEnter: () => el.classList.add('in'),
+/* ─── SCROLL REVEALS (IntersectionObserver) ───────────────── */
+function addIn(el) { el.classList.add('in'); }
+
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      addIn(e.target);
+      revealObs.unobserve(e.target);
+    }
   });
+}, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+  if (el.getBoundingClientRect().top < window.innerHeight) {
+    addIn(el);
+  } else {
+    revealObs.observe(el);
+  }
 });
 
 // Stagger children
 document.querySelectorAll('.reveal-stagger').forEach(el => {
-  const items = el.querySelectorAll(':scope > *');
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 85%',
-    once: true,
-    onEnter: () => items.forEach(item => item.classList.add('in')),
-  });
+  const triggerStagger = () => el.querySelectorAll(':scope > *').forEach(item => item.classList.add('in'));
+  if (el.getBoundingClientRect().top < window.innerHeight) {
+    triggerStagger();
+  } else {
+    const staggerObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          triggerStagger();
+          staggerObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+    staggerObs.observe(el);
+  }
 });
 
 /* ─── HERO VIDEO TRIGGER ──────────────────────────────────── */
@@ -153,12 +177,73 @@ if (heroVideo) {
   });
 }
 
+/* ─── INSTAGRAM REELS ─────────────────────────────────────── */
+document.querySelectorAll('.ig-reel').forEach(reel => {
+  const video = reel.querySelector('.ig-reel__video');
+  if (!video) return;
+
+  reel.addEventListener('mouseenter', () => {
+    video.play().catch(() => {});
+    reel.classList.add('is-playing');
+  });
+
+  reel.addEventListener('mouseleave', () => {
+    video.pause();
+    reel.classList.remove('is-playing');
+    reel.style.removeProperty('--tilt-x');
+    reel.style.removeProperty('--tilt-y');
+  });
+
+  // 3D tilt follows cursor within the phone
+  reel.addEventListener('mousemove', e => {
+    const phone = reel.querySelector('.ig-reel__phone');
+    if (!phone) return;
+    const rect = phone.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width  - 0.5;
+    const y = (e.clientY - rect.top)  / rect.height - 0.5;
+    reel.style.setProperty('--tilt-x', `${(-y * 10).toFixed(1)}deg`);
+    reel.style.setProperty('--tilt-y', `${( x * 10).toFixed(1)}deg`);
+  });
+});
+
+/* ─── SERVICE AREA CURSOR PARALLAX ───────────────────────── */
+(function () {
+  const section = document.querySelector('.service-area');
+  const mapWrap = section?.querySelector('.service-area__map-wrap');
+  if (!section || !mapWrap) return;
+
+  const MAX_X = 28; // px
+  const MAX_Y = 18;
+  const LERP  = 0.055;
+
+  let tx = 0, ty = 0, cx = 0, cy = 0, rafId = null;
+
+  function tick() {
+    cx += (tx - cx) * LERP;
+    cy += (ty - cy) * LERP;
+    mapWrap.style.transform = `translate(${cx.toFixed(2)}px, ${cy.toFixed(2)}px)`;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  section.addEventListener('mousemove', e => {
+    const r = section.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width  - 0.5) * -MAX_X * 2;
+    ty = ((e.clientY - r.top)  / r.height - 0.5) * -MAX_Y * 2;
+  }, { passive: true });
+
+  section.addEventListener('mouseleave', () => { tx = 0; ty = 0; });
+
+  // Start the loop once, keep it alive
+  tick();
+})();
+
 /* ─── BOLT SCENE ──────────────────────────────────────────── */
 (function () {
   const scene  = document.querySelector('.bolt-scene');
   const bolt   = document.querySelector('.bolt-scene__bolt');
   const layerA = document.querySelector('.bolt-scene__layer--a');
-  const textB  = document.querySelector('.bolt-scene__text--b');
+  const textB   = document.querySelector('.bolt-scene__text--b');
+  const bgLines = document.querySelector('.bolt-scene__bg-lines');
   if (!scene || !bolt || !layerA) return;
 
   const lerp   = (a, b, t) => a + (b - a) * t;
@@ -184,7 +269,8 @@ if (heroVideo) {
 
     // Phase 3 (0.80 → 1.00): text B appears
     const phase3 = clamp((raw - 0.80) / 0.20, 0, 1);
-    if (textB) textB.classList.toggle('is-visible', phase3 > 0.4);
+    if (textB)   textB.classList.toggle('is-visible',   phase3 > 0.4);
+    if (bgLines) bgLines.classList.toggle('is-visible', phase3 > 0.2);
 
     if (phase2 === 0) {
       bolt.style.clipPath  = `inset(0 0 ${clipBottom.toFixed(1)}% 0 round 2px)`;
